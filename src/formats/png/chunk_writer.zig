@@ -3,7 +3,8 @@ const std = @import("std");
 const io = std.io;
 const mem = std.mem;
 
-const Crc = std.hash.crc.Crc32WithPoly(.IEEE);
+// const Crc = std.hash.crc.Crc32WithPoly(.IEEE);
+const Crc = std.hash.Crc32;
 
 /// Writer based on buffered writer that will write whole chunks of data of [buffer size]
 pub fn ChunkWriter(comptime buffer_size: usize, comptime WriterType: type) type {
